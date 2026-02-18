@@ -1,0 +1,178 @@
+/* Custom CSS Styles */
+
+/* 부드러운 스크롤 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 햄버거 메뉴 애니메이션 */
+.hamburger-line {
+  transition: all 0.3s ease-in-out;
+}
+
+/* 햄버거 아이콘이 활성화될 때 X 모양으로 변경 */
+.hamburger-active .line-1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-active .line-2 {
+  opacity: 0;
+}
+
+.hamburger-active .line-3 {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* 네비게이션 바 스크롤 시 스타일 변경 */
+.nav-scrolled {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  background-color: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+}
+
+/* 스크롤 애니메이션 (선택사항) */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 링크 호버 효과 개선 */
+a {
+  transition: color 0.2s ease-in-out;
+}
+
+/* 스크롤바 스타일 (Webkit 브라우저용) - 다크 모드 */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0E27;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6B6B;
+}
+
+/* 포커스 스타일 개선 (접근성) - 코랄 색상 */
+a:focus,
+button:focus {
+  outline: 2px solid #FF6B6B;
+  outline-offset: 2px;
+}
+
+/* 프로필 이미지 호버 효과 */
+#hero img {
+  transition: transform 0.3s ease;
+}
+
+#hero img:hover {
+  transform: scale(1.05);
+}
+
+/* 프로젝트 카드 호버 효과 */
+#projects .bg-white {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#projects .bg-white:hover {
+  transform: translateY(-5px);
+}
+
+/* SNS 아이콘 호버 효과 */
+.fa-github:hover,
+.fa-youtube:hover,
+.fa-instagram:hover,
+.fa-linkedin:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/* 프로필 이미지 그라디언트 링 애니메이션 */
+@keyframes gradient-rotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+#hero .animate-pulse {
+  animation: gradient-rotate 3s linear infinite;
+}
+
+/* 카드 호버 그림자 효과 (코랄 색상) */
+#projects .hover\:shadow-coral-500\/20:hover {
+  box-shadow: 0 10px 40px rgba(255, 107, 107, 0.2);
+}
+
+#contact .hover\:shadow-coral-500\/20:hover {
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.2);
+}
+
+#contact .hover\:shadow-red-500\/20:hover {
+  box-shadow: 0 10px 30px rgba(239, 68, 68, 0.2);
+}
+
+#contact .hover\:shadow-pink-500\/20:hover {
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.2);
+}
+
+#contact .hover\:shadow-blue-500\/20:hover {
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+}
+
+/* ==========================================
+   토글 슬라이드 애니메이션
+   ========================================== */
+
+/* 경력/프로젝트 상세 내용 토글 */
+.experience-details,
+.project-details {
+  transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.experience-details.hidden,
+.project-details.hidden {
+  max-height: 0;
+  opacity: 0;
+}
+
+.experience-details:not(.hidden),
+.project-details:not(.hidden) {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+/* 아이콘 회전 애니메이션 */
+.toggle-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+.toggle-icon.rotate-180 {
+  transform: rotate(180deg);
+}
+
+/* 토글 버튼 호버 효과 */
+.toggle-details-btn:hover .toggle-icon,
+.toggle-project-btn:hover .toggle-icon {
+  transform: translateY(2px);
+}
+
+.toggle-details-btn:hover .toggle-icon.rotate-180,
+.toggle-project-btn:hover .toggle-icon.rotate-180 {
+  transform: rotate(180deg) translateY(2px);
+}
